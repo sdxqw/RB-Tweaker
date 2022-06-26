@@ -23,6 +23,10 @@ public abstract class ModuleRenderer extends ModuleBase {
 
     public ModuleRenderer(String name, String description, String icon, int x, int y) {
         super(name, description, icon);
+        drawDraggableComponent(x, y);
+    }
+
+    public void drawDraggableComponent(int x, int y) {
         if(getSetting().size() >= 1) {
             draggableComponent = new DraggableComponent( x, y, getWidthIn(), getHeightIn() );
         } else if (getSetting().iterator().hasNext()) {
