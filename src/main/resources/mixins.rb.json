@@ -9,6 +9,7 @@
   "mixins": [
     "client.MinecraftMixins",
     "rendering.RenderGlobalMixins",
+    "ui.GuiIngameMixins",
     "ui.GuiMainMenuMixin"
   ]
 }

@@ -2,8 +2,10 @@ package io.github.axst.mixins.client;
 
 import io.github.axst.RebelCore;
 import io.github.axst.ui.HUDScreen;
+import io.github.axst.ui.module.GuiModule;
 import io.github.axst.ui.splash.SplashProgress;
 import io.github.axst.utils.KeyBinds;
+import io.github.axst.utils.interfaces.IHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.DefaultResourcePack;
@@ -45,6 +47,7 @@ public abstract class MinecraftMixins {
     @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lorg/lwjgl/input/Keyboard;next()Z"))
     public void injectRuntTuck2(final CallbackInfo ci) {
         if (KeyBinds.HUD_SCREEN.isPressed()) Minecraft.getMinecraft().displayGuiScreen(new HUDScreen());
+        if (KeyBinds.TOGGLE_PERSPECTIVE.isPressed()) IHelper.minecraft.displayGuiScreen(new GuiModule());
     }
 
     /**

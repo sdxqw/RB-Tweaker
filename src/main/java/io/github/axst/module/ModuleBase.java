@@ -37,7 +37,6 @@ public class ModuleBase implements IHelper {
         this.setEnabled(!this.isEnabled());
     }
 
-
     public void addSettings(Settings... toAdd) {
         setting.addAll(Arrays.asList(toAdd));
     }

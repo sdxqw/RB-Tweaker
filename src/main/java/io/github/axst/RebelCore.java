@@ -1,6 +1,7 @@
 package io.github.axst;
 
 import io.github.axst.module.ModuleManager;
+import io.github.axst.ui.module.GuiModule;
 import io.github.axst.ui.splash.SplashProgress;
 import io.github.axst.utils.font.CFontRenderer;
 import lombok.Getter;
@@ -11,6 +12,7 @@ public class RebelCore {
 
     @Getter private static final RebelCore instance = new RebelCore();
     @Getter private ModuleManager moduleManager;
+    @Getter public GuiModule guiModule;
 
     public CFontRenderer clientFont;
     public CFontRenderer clientFontSmaller;
@@ -19,6 +21,7 @@ public class RebelCore {
     public void initialize() {
         SplashProgress.newMessage("some cool feature");
         moduleManager = new ModuleManager();
+        guiModule = new GuiModule();
         loadFonts();
     }
 

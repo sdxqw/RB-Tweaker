@@ -6,8 +6,6 @@ import io.github.axst.utils.ui.RenderUtils;
 import lombok.Getter;
 
 import java.awt.*;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public abstract class ModuleRenderer extends ModuleBase {
 
@@ -25,8 +23,13 @@ public abstract class ModuleRenderer extends ModuleBase {
 
     public ModuleRenderer(String name, String description, String icon, int x, int y) {
         super(name, description, icon);
-        final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(3);
-        executor.schedule(() -> draggableComponent = new DraggableComponent( x, y, getWidthIn(), getHeightIn() ), 5, TimeUnit.SECONDS);
+        if(getSetting().size() >= 1) {
+            draggableComponent = new DraggableComponent( x, y, getWidthIn(), getHeightIn() );
+        } else if (getSetting().iterator().hasNext()) {
+            draggableComponent = new DraggableComponent( x, y, getWidthIn(), getHeightIn() );
+        } else {
+            draggableComponent = new DraggableComponent( x, y, getWidthIn(), getHeightIn() );
+        }
     }
 
     public abstract void drawModule();
