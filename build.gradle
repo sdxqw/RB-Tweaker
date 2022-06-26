@@ -16,7 +16,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'java'
 
 String tweakerClass = 'io.github.axst.launch.TCLTweaker'
-String tweaker = 'mixins.tcl'
+String tweaker = 'mixins.rb'
 
 compileJava {
 	sourceCompatibility = targetCompatibility = 8
@@ -53,13 +53,17 @@ configurations {
 }
 
 dependencies {
-	compileOnly('org.projectlombok:lombok:1.18.24')
 	tclmdk('org.spongepowered:mixin:0.7.11-SNAPSHOT') {
 		exclude module: 'launchwrapper'
 		exclude module: 'guava'
 		exclude module: 'gson'
 		exclude module: 'commons-io'
 	}
+
+	compileOnly('org.slick2d:slick2d-core:1.0.2')
+
+	compileOnly('org.projectlombok:lombok:1.18.24')
+	annotationProcessor('org.projectlombok:lombok:1.18.24')
 }
 
 processResources {

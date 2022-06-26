@@ -36,7 +36,7 @@ public class TCLTweaker implements ITweaker {
 	@Override
 	public void injectIntoClassLoader(LaunchClassLoader classLoader) {
 		MixinBootstrap.init();
-		Mixins.addConfiguration("mixins.tcl.json");
+		Mixins.addConfiguration("mixins.rb.json");
 
 		MixinEnvironment environment = MixinEnvironment.getDefaultEnvironment();
 
