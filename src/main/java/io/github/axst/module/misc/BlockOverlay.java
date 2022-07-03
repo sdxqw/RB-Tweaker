@@ -16,6 +16,6 @@ public class BlockOverlay extends ModuleBase {
         super("Block Overlay",
                 "Changes the look of the selection box",
                 "discord");
-        addSettings(outlineWidth, red, green, blue, alpha);
+        //addSettings(outlineWidth, red, green, blue, alpha);
     }
 }

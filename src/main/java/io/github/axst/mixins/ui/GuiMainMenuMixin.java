@@ -19,9 +19,6 @@ import java.awt.*;
 @Mixin(GuiMainMenu.class)
 public class GuiMainMenuMixin extends GuiScreen implements IHelper {
 
-    private final ResourceLocation background = new ResourceLocation("rebelclient/bg.png");
-    private final ResourceLocation logo = new ResourceLocation("rebelclient/rclogo.png");
-
     /**
      * GuiMainMenu Method Overwrite.
      * @author sdxqw
@@ -54,9 +51,6 @@ public class GuiMainMenuMixin extends GuiScreen implements IHelper {
         GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
         GlStateManager.enableBlend();
         GlStateManager.color(1.0F, 1.0F, 1.0F,1.0F);
-        minecraft.getTextureManager().bindTexture(background);
-        Gui.drawModalRectWithCustomSizedTexture(-22 + (Mouse.getX() / 90), (Mouse.getY() * -1 / 90), 0, 0, width + 20, height + 18, width + 21f, height + 20f);
-        RenderUtils.draw2DImage(logo, sr.getScaledWidth() / 2 - 85, sr.getScaledHeight() / 2 - 100, 176, 42, new Color(255,255,255));
         RenderUtils.renderProfile();
         GlStateManager.popMatrix();
         String watermark = "Rebel Client (1.8.9-v1)";

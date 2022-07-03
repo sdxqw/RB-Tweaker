@@ -16,7 +16,7 @@ public class FPSModule extends ModuleRenderer {
                    "test render module",
                    "discord", 100,
                    100);
-        addSettings(test);
+       // addSettings(test);
     }
 
     @Override
